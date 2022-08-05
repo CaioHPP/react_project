@@ -69,4 +69,9 @@ describe('<Heading />', () => {
     const h2 = container.querySelector('h2');
     expect(h2.tagName.toLowerCase()).toBe('h2');
   });
+
+  it('should match snapshot', () => {
+    const { container } = renderTheme(<Heading>texto</Heading>);
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });
